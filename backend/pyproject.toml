@@ -1,5 +1,5 @@
 [project]
-name = "jobprimers-backend"
+name = "app"
 version = "0.1.0"
 description = "Career Development and Recruitment Solution"
 requires-python = ">=3.10,<4.0"
