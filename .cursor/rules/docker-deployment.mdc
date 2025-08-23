@@ -1,0 +1,59 @@
+# Docker & Deployment Guidelines
+
+## Docker Compose Configuration
+
+- Main configuration: [docker-compose.yml](mdc:docker-compose.yml)
+- Development overrides: [docker-compose.override.yml](mdc:docker-compose.override.yml)
+- Traefik configuration: [docker-compose.traefik.yml](mdc:docker-compose.traefik.yml)
+
+## Development Workflow
+
+- Start development stack: `docker compose watch`
+- Backend service runs on port 8000
+- Frontend service runs on port 5173
+- Database (PostgreSQL) runs on port 5432
+- Adminer (database admin) runs on port 8080
+
+## Environment Configuration
+
+- Use `.env` files for environment variables
+- Never commit sensitive data to version control
+- Generate secure keys with: `python -c "import secrets; print(secrets.token_urlsafe(32))"`
+- Required environment variables:
+  - `SECRET_KEY`
+  - `FIRST_SUPERUSER_PASSWORD`
+  - `POSTGRES_PASSWORD`
+
+## Production Deployment
+
+- Use Traefik as reverse proxy for automatic HTTPS
+- Configure domain routing (api.example.com, dashboard.example.com)
+- Set up proper environment variables in production
+- Use Docker Compose for orchestration
+- Follow [deployment.md](mdc:deployment.md) for detailed instructions
+
+## Local Development
+
+- Can run services individually outside Docker
+- Backend: `cd backend && fastapi dev app/main.py`
+- Frontend: `cd frontend && npm run dev`
+- Database: Use Docker Compose PostgreSQL service
+
+## Monitoring & Logs
+
+- Check logs: `docker compose logs`
+- Service-specific logs: `docker compose logs <service-name>`
+- Traefik UI available at port 8090
+- MailCatcher for email testing at port 1080
+
+## Security Considerations
+
+- Use proper secrets management
+- Configure CORS appropriately
+- Set up proper firewall rules
+- Use HTTPS in production
+- Regular security updates
+description:
+globs:
+alwaysApply: false
+---

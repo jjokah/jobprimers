@@ -1,0 +1,43 @@
+# JobPrimers - Full Stack FastAPI Project
+
+This is a full-stack web application built with FastAPI backend and React frontend. The project follows modern development practices with Docker containerization, comprehensive testing, and automated deployment.
+
+## Project Structure
+
+- **Backend**: FastAPI application in [backend/](mdc:backend/) directory
+  - Main entry point: [backend/app/main.py](mdc:backend/app/main.py)
+  - API routes: [backend/app/api/routes/](mdc:backend/app/api/routes/)
+  - Database models: [backend/app/models.py](mdc:backend/app/models.py)
+  - Database migrations: [backend/app/alembic/](mdc:backend/app/alembic/)
+  - Configuration: [backend/app/core/config.py](mdc:backend/app/core/config.py)
+
+- **Frontend**: React application in [frontend/](mdc:frontend/) directory
+  - Main entry point: [frontend/src/main.tsx](mdc:frontend/src/main.tsx)
+  - Components: [frontend/src/components/](mdc:frontend/src/components/)
+  - Routes: [frontend/src/routes/](mdc:frontend/src/routes/)
+  - Generated API client: [frontend/src/client/](mdc:frontend/src/client/)
+
+- **Configuration**: Environment variables in [.env](mdc:.env) files
+- **Deployment**: Docker Compose configuration in [docker-compose.yml](mdc:docker-compose.yml)
+- **Documentation**: [README.md](mdc:README.md), [development.md](mdc:development.md), [deployment.md](mdc:deployment.md)
+
+## Technology Stack
+
+- **Backend**: FastAPI, SQLModel, PostgreSQL, Alembic, Pydantic
+- **Frontend**: React, TypeScript, Chakra UI, TanStack Router, Vite
+- **Testing**: Pytest, Playwright, Coverage
+- **Development**: Docker Compose, Pre-commit hooks, Ruff, MyPy
+- **Deployment**: Traefik, Docker, GitHub Actions
+
+## Key Development Commands
+
+- Start development: `docker compose watch`
+- Backend development: `cd backend && fastapi dev app/main.py`
+- Frontend development: `cd frontend && npm run dev`
+- Run tests: `./scripts/test.sh`
+- Code formatting: `./scripts/format.sh`
+- Linting: `./scripts/lint.sh`
+description:
+globs:
+alwaysApply: false
+---

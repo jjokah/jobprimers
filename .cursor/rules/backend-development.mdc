@@ -1,0 +1,48 @@
+# Backend Development Guidelines
+
+## FastAPI Best Practices
+
+- Use SQLModel for database models and Pydantic for API schemas
+- Follow the existing project structure in [backend/app/](mdc:backend/app/)
+- API routes should be in [backend/app/api/routes/](mdc:backend/app/api/routes/)
+- Database models in [backend/app/models.py](mdc:backend/app/models.py)
+- Configuration in [backend/app/core/config.py](mdc:backend/app/core/config.py)
+
+## Code Style
+
+- Use type hints for all function parameters and return values
+- Follow PEP 8 with Ruff formatting (configured in [backend/pyproject.toml](mdc:backend/pyproject.toml))
+- Use dependency injection with FastAPI's Depends
+- Implement proper error handling with HTTPException
+- Use async/await for database operations
+
+## Database
+
+- Use Alembic for migrations (see [backend/app/alembic/](mdc:backend/app/alembic/))
+- Models should inherit from SQLModel
+- Use proper relationships and foreign keys
+- Implement cascade deletes where appropriate
+
+## Testing
+
+- Write tests in [backend/app/tests/](mdc:backend/app/tests/)
+- Use pytest fixtures for database setup
+- Test both API endpoints and CRUD operations
+- Run tests with: `cd backend && uv run pytest`
+
+## Security
+
+- Use JWT tokens for authentication
+- Hash passwords with bcrypt
+- Validate all input data with Pydantic
+- Use environment variables for sensitive configuration
+
+## Dependencies
+
+- Add new dependencies to [backend/pyproject.toml](mdc:backend/pyproject.toml)
+- Use `uv` for dependency management
+- Pin dependency versions for stability
+description:
+globs:
+alwaysApply: false
+---
