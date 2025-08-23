@@ -10,7 +10,7 @@
 ## Component Organization
 
 - UI components in [frontend/src/components/ui/](mdc:frontend/src/components/ui/)
-- Feature components organized by domain (Admin, Items, UserSettings, etc.)
+- Feature components organized by domain (Admin, UserSettings, etc.)
 - Use Chakra UI for styling and theming
 - Implement dark mode support with next-themes
 

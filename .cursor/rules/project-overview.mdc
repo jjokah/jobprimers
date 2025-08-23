@@ -1,6 +1,6 @@
 # JobPrimers - Full Stack FastAPI Project
 
-This is a full-stack web application built with FastAPI backend and React frontend. The project follows modern development practices with Docker containerization, comprehensive testing, and automated deployment.
+This is a full-stack web application built with FastAPI backend and React frontend. The platform connects job seekers with employers. The project follows modern development practices with Docker containerization, comprehensive testing, and automated deployment.
 
 ## Project Structure
 

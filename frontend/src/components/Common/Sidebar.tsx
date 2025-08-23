@@ -14,7 +14,7 @@ import {
   DrawerRoot,
   DrawerTrigger,
 } from "../ui/drawer"
-import SidebarItems from "./SidebarItems"
+
 
 const Sidebar = () => {
   const queryClient = useQueryClient()
@@ -53,7 +53,7 @@ const Sidebar = () => {
           <DrawerBody>
             <Flex flexDir="column" justify="space-between">
               <Box>
-                <SidebarItems />
+
                 <Flex
                   as="button"
                   onClick={handleLogout}
@@ -89,7 +89,7 @@ const Sidebar = () => {
         p={4}
       >
         <Box w="100%">
-          <SidebarItems />
+
         </Box>
       </Box>
     </>
