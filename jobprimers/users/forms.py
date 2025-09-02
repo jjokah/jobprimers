@@ -34,6 +34,9 @@ class UserSignupForm(SignupForm):
     Default fields will be added automatically.
     Check UserSocialSignupForm for accounts created from social.
     """
+    class Meta(SignupForm.Meta):
+        model = User
+        fields = ('email', 'password', 'first_name', 'last_name')
 
 
 class UserSocialSignupForm(SocialSignupForm):

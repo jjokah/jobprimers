@@ -6,6 +6,8 @@ from django.utils.translation import gettext_lazy as _
 from django.views.generic import DetailView
 from django.views.generic import RedirectView
 from django.views.generic import UpdateView
+from django.views.generic import CreateView
+from .forms import UserSignupForm
 
 from jobprimers.users.models import User
 
@@ -44,3 +46,17 @@ class UserRedirectView(LoginRequiredMixin, RedirectView):
 
 
 user_redirect_view = UserRedirectView.as_view()
+
+class RegisterView(CreateView):
+    form_class = UserSignupForm
+
+    template_name = 'registration/register.html'
+
+    success_url = reverse('login')
+
+    def form_valid(self, form):
+        return super().form_valid(form)
+    
+user_register_view = RegisterView.as_view()
+    
+

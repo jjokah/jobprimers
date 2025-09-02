@@ -363,3 +363,8 @@ WEBPACK_LOADER = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+
+# JWT settings (add these as needed)
+JWT_ACCESS_TOKEN_LIFETIME = 15  # minutes
+JWT_REFRESH_TOKEN_LIFETIME = 7  # days
+SITE_NAME = 'Your App Name'
