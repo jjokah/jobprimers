@@ -7,7 +7,7 @@ import arrow
 import datetime
 import operator
 from dateutil.relativedelta import relativedelta
-from pytz import timezone
+from zoneinfo import ZoneInfo
 import re
 from PIL import Image
 import os
@@ -288,7 +288,7 @@ def get_next_month():
 
 
 def get_asia_time():
-    asia_timezone = timezone(settings.TIMEZONE)
+    asia_timezone = ZoneInfo(settings.TIMEZONE)
     asia_time = datetime.datetime.now(asia_timezone).strftime("%Y-%m-%d %H:%M:%S")
     published_date = datetime.datetime.strptime(
         str(asia_time), "%Y-%m-%d %H:%M:%S"
