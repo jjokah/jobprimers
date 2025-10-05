@@ -51,8 +51,8 @@ git clone <your-repo-url>
 cd <repo>
 
 # Python environment
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -62,24 +62,47 @@ Create `.env` file:
 ```env
 DEBUG=True
 SECRET_KEY="$(openssl rand -base64 50)"
-DATABASE_URL=postgresql://postgres:password@localhost/peeljobs
+
+DB_NAME='jobprimers_dev_db'
+DB_USER='jobprimers_dev_user'
+DB_PASSWORD='jobprimers_dev_pass'
+DB_HOST='127.0.0.1'
+DB_PORT='5432'
+
 REDIS_URL=redis://localhost:6379/0
 ELASTICSEARCH_URL=http://localhost:9200
 PEEL_URL=http://localhost:8000/
-DEFAULT_FROM_EMAIL=noreply@peeljobs.local
+DEFAULT_FROM_EMAIL=noreply@jobprimers.local
+
+ENV_TYPE="DEV"
+
+AWS_SES_REGION_NAME = 'eu-west-1'
+AWS_SES_REGION_ENDPOINT = 'email.eu-west-1.amazonaws.com'
 ```
 
 ### 3. Database Setup
 
 ```bash
 # Create database
-sudo -u postgres createdb peeljobs
-sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'password';"
+sudo -u postgres createuser --pwprompt jobprimers_dev_user
+sudo -u postgres createdb jobprimers_dev_db --owner=jobprimers_dev_user
 
 # Run migrations
 python manage.py migrate
 python manage.py loaddata industries qualification skills countries states cities
 python manage.py createsuperuser
+```
+
+#### Make Superuser account active
+```bash
+python manage.py shell
+```
+enter this command in the django project shell
+```bash
+from peeldb.models import User
+user = User.objects.first()
+user.is_active = True
+user.save()
 ```
 
 ### 4. Frontend Assets
