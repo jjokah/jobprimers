@@ -143,4 +143,7 @@ COMPRESS_OFFLINE = False
 # Additional development tools settings
 # DJANGO_EXTENSIONS = True  # if using django-extensions
 
+# TODO: Temporarily disable Haystack signals 
+# HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.BaseSignalProcessor'
+
 print("Local development settings loaded")
