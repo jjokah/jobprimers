@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: [
     "./templates/**/*.html", // All HTML templates in templates directory
     "./*/templates/**/*.html", // App-specific templates
