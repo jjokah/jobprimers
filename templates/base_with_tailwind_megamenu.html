@@ -14,8 +14,8 @@
               <!-- Brand -->
               <div class="flex items-center">
                 <a href="/" class="flex items-center hover:opacity-80 transition-opacity duration-200">
-                  <img src="{{logo}}" alt="PeelJobs Logo" class="h-8 w-auto mr-3 object-contain">
-                  <span class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors duration-200">Peeljobs</span>
+                  <img src="{% static 'logo.svg' %}" alt="Jobprimers Logo" class="h-8 w-auto mr-3 object-contain">
+                  <!-- <span class="text-2xl font-bold text-blue-600 hover:text-blue-700 transition-colors duration-200">Jobprimers</span> -->
                 </a>
               </div>
 
@@ -500,9 +500,9 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <!-- About Section -->
         <div>
-          <h3 class="text-2xl font-bold text-blue-400 mb-4">Peeljobs</h3>
+          <h3 class="text-2xl font-bold text-blue-400 mb-4">Jobprimers</h3>
           <p class="text-gray-300 leading-relaxed text-sm mb-6">
-            Peeljobs connects recruiters and job seekers across India with unique features and ease of use. We offer many free services to both job-seekers and recruiters.
+            Jobprimers connects recruiters and job seekers across Nigeria with unique features and ease of use. We offer many free services to both job-seekers and recruiters.
           </p>
 
           <!-- Social Links -->
@@ -536,7 +536,7 @@
           <h4 class="font-semibold text-base mb-4 text-white">About Us</h4>
           <ul class="space-y-2">
             <li><a href="{% url 'pages' 'about-us' %}" target="_blank"
-                class="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm">About Peeljobs</a></li>
+                class="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm">About Jobprimers</a></li>
             <li><a href="{% url 'sitemap' %}" target="_blank"
                 class="text-gray-300 hover:text-blue-400 transition-colors duration-300 text-sm">Sitemap</a></li>
             <li><a href="{% url 'pages' 'terms-conditions' %}" target="_blank"
